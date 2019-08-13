@@ -1,0 +1,34 @@
+{
+  "name": "abraham-related",
+  "version": "1.0.0",
+  "description": "Frontend Capstone project",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "server-dev": "nodemon server/index.js",
+    "mongo-dev": "mongod --config /usr/local/etc/mongod.conf"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apex-rpt15/abraham-related.git"
+  },
+  "author": "Abraham Esparza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apex-rpt15/abraham-related/issues"
+  },
+  "homepage": "https://github.com/apex-rpt15/abraham-related#readme"
+}

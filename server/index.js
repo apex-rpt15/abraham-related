@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const port = 3001;
 
 const app = express();
+app.use(express.static('client'));
 
 app.get('/recommended', (err, res) => {
   res.send('Recommended Tracks');

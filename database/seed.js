@@ -8,9 +8,8 @@ const songName = [
 const trackGenerator = (songTitle) => {
   for (let i = 1; i < songName.length; i++) {
     let songLimit = songName[i]
-    //expecting console.log to print first 3 tracks in songName array
     console.log('relatedSongs: ', songLimit)
-    //calling my database save fn to save these three tracks
+    //calling my database save fn to save these tracks
     db(songLimit);
   }
 }

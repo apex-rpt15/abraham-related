@@ -7,18 +7,19 @@ db.on('error', () =>  { console.log('DB Error') } );
 db.once('open', () => { console.log('MongoDB Connected') } );
 
 //define schema
-const relatedSongs = mongoose.Schema({
-  relatedSong: String
+const relatedSchema = mongoose.Schema({
+  song: String
 });
 
 //define model
-const Recommended = mongoose.model('Recommended', relatedSongs);
+const Recommended = mongoose.model('Recommended', relatedSchema);
 
-const save = (info) => {
+const save = (data) => {
   let songInfo = new Recommended({
-    relatedSong: info.relatedSong
+    song: data.song
   });
-  songInfo.save((err) => {
+  songInfo.save(err => {
+    console.log('Successful save to DB');
     if (err) { console.log('Save Err ', err) }
   });
 }
@@ -26,7 +27,6 @@ const save = (info) => {
 //callback to fetch data
 let fetch = callback => {
   let cb = (err, info) => {
-    console.log('info line 29: ', info);
     if (err) {
       console.log(err);
     } else {
@@ -34,7 +34,7 @@ let fetch = callback => {
       callback(info);
     }
   }
-  Recommended.find(cb).limit(3);
+  Recommended.find({}).limit(3);
 }
 
 module.exports = {

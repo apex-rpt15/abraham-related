@@ -17,9 +17,9 @@ app.post('/related', (req, res) => {
   res.status(200).send('Post Success');
 });
 
-app.get('/related', (err, res, req) => {
+app.get('/related', (err, res) => {
   //expecting to see the posted data from postman
-  res.send(req.body);
+  //use request method to get res
 });
 
 app.listen(port, () => {

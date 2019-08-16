@@ -6,20 +6,24 @@
   "devDependencies": {},
   "scripts": {
     "server-dev": "nodemon server/index.js",
-    "mongo-dev": "mongod --config /usr/local/etc/mongod.conf"
+    "mongo-dev": "mongod --config /usr/local/etc/mongod.conf",
+    "react-dev": "webpack -d --watch"
   },
   "dependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.6.9",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   },
   "repository": {
     "type": "git",

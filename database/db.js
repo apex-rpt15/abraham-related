@@ -15,27 +15,19 @@ const relatedSchema = mongoose.Schema({
 const Recommended = mongoose.model('Recommended', relatedSchema);
 
 const save = (data) => {
+  //console.log prints all tracks from my seed
+  // console.log('data from db line 18 ', data)
   let songInfo = new Recommended({
     song: data.song
   });
   songInfo.save(err => {
+    //prints save message for every song
     // console.log('Successful save to DB');
     if (err) { console.log('Save Err ', err) }
   });
 }
 
-//callback to fetch data
-let fetch = callback => {
-  let cb = (err, info) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('info line 33: ', info);
-      callback(info);
-    }
-  }
-}
 
 module.exports = {
-  save, fetch, Recommended
+  save, Recommended
 }

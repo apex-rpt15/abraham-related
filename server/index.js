@@ -14,17 +14,17 @@ app.use(express.static('../public/dist'))
 app.post('/related', (req, res) => {
   console.log('Server post: ', req.body);
   let savedSongs = songs => songs.forEach(db.save)
-  seed.trackGenerator(req.body);
+  seed.trackGenerator(req.body, db.save);
   res.status(200).send('Post Success');
 });
 
 app.get('/related', (req, res) => {
   //expecting to see the posted data from postman
-  //use request method to get res
-  db.Recommended.find({
+  db.songInfo.find({
     song: req.body.song
   }).limit(3)
   .then((results) => {
+    console.log('results in get ', results)
     if (results.length) {
     res.send(results);
     } else {

@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Frontend Capstone project",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
   "scripts": {
     "server-dev": "nodemon server/index.js",
     "mongo-dev": "mongod --config /usr/local/etc/mongod.conf",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/cli": "^7.5.5",

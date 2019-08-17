@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const seed = require('../database/seed.js');
 const db = require('../database/db.js');
+const request = require('request');
 
 const app = express();
 const port = 3001;
@@ -17,9 +18,19 @@ app.post('/related', (req, res) => {
   res.status(200).send('Post Success');
 });
 
-app.get('/related', (err, res) => {
+app.get('/related', (req, res) => {
   //expecting to see the posted data from postman
   //use request method to get res
+  db.Recommended.find({
+    song: req.body.song
+  }).limit(3)
+  .then((results) => {
+    if (results.length) {
+    res.send(results);
+    } else {
+      res.send('Error, no data in DB');
+    }
+  })
 });
 
 app.listen(port, () => {

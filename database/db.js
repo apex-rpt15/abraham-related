@@ -19,7 +19,7 @@ const save = (data) => {
     song: data.song
   });
   songInfo.save(err => {
-    console.log('Successful save to DB');
+    // console.log('Successful save to DB');
     if (err) { console.log('Save Err ', err) }
   });
 }
@@ -34,9 +34,8 @@ let fetch = callback => {
       callback(info);
     }
   }
-  Recommended.find({}).limit(3);
 }
 
 module.exports = {
-  save, fetch
+  save, fetch, Recommended
 }
